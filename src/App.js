@@ -1,28 +1,31 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { FirstSection, SecondSection } from './sections'
+import { Menu } from './components'
+import { Element } from 'react-scroll'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+const App = () => {
+  return (
+    <>
+      <Menu
+        items={[
+          {
+            title: 'ГЛАВНАЯ',
+            link: 'first',
+          },
+          {
+            title: 'О НАС',
+            link: 'second',
+          },
+        ]}
+      />
+      <Element name="first">
+        <FirstSection />
+      </Element>
+      <Element name="second">
+        <SecondSection />
+      </Element>
+    </>
+  )
 }
 
-export default App;
+export default App

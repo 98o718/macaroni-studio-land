@@ -18,7 +18,7 @@ const Video = styled.video({
 
 export const SpaghettiVideo = () => {
   return (
-    <Video loop autoPlay muted>
+    <Video loop autoPlay muted playsinline>
       <source src={pasta} type="video/mp4" />
       Ваш браузер не поддерживает тег video{' '}
       <span role="img" aria-label="Грустный эмодзи">

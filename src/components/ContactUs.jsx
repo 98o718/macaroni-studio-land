@@ -64,6 +64,16 @@ const StylishButton = styled.button({
       backgroundColor: 'white',
     },
   },
+
+  '@media (max-width: 375px)': {
+    width: '200px',
+    height: '102px',
+
+    ':after': {
+      width: '200px',
+      height: '102px',
+    },
+  },
 })
 
 export const ContactUs = () => {

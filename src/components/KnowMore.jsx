@@ -38,7 +38,7 @@ const Paragraph = styled.h2({
 export const KnowMore = () => {
   return (
     <Container>
-      <Link to="second" spy={true} smooth={true} duration={350}>
+      <Link to="about" spy={true} smooth={true} duration={350}>
         <Paragraph>Узнать больше</Paragraph>
       </Link>
     </Container>

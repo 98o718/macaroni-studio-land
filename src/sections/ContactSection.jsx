@@ -11,7 +11,7 @@ import { ContactUs } from '../components'
 const Section = styled.section({
   width: '100%',
   height: '100vh',
-  background: `url(${spaghetti}) right top`,
+  background: `url(${spaghetti}) 95% top`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   display: 'flex',
@@ -23,7 +23,8 @@ const Section = styled.section({
   zIndex: 0,
 
   '@media (max-width: 667px)': {
-    padding: 30,
+    padding: '30px',
+    paddingTop: '60px',
   },
 })
 

@@ -3,7 +3,12 @@ import React from 'react'
 import styled from '@emotion/styled'
 
 const Wrapper = styled.div({
-  width: '80',
+  width: '70%',
+
+  '@media (max-width: 667px)': {
+    width: '100%',
+    fontSize: '0.8em',
+  },
 })
 
 const Header = styled.h1({

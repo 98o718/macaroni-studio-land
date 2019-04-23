@@ -4,16 +4,13 @@ import styled from '@emotion/styled'
 
 import { Element } from 'react-scroll'
 
-import logo from '../assets/logo.svg'
-import spaghetti from '../assets/506049-PHTXCC-112.jpg'
+import spaghetti from '../assets/spaghetti.jpg'
 
 import { ContactUs } from '../components'
 
 const Section = styled.section({
   width: '100%',
   height: '100vh',
-  background: '#19413F',
-  background: 'while',
   background: `url(${spaghetti}) right top`,
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
@@ -54,29 +51,6 @@ const Phrase = styled.h2({
   },
 })
 
-const Paragraph = styled.p({
-  color: 'white',
-  fontSize: '1.5em',
-  margin: 0,
-  fontWeight: 300,
-  marginBottom: 5,
-  '@media (max-width: 667px)': {
-    fontSize: '1.2em',
-  },
-})
-
-const Logo = styled.div({
-  height: 100,
-  width: '100%',
-  backgroundColor: 'black',
-  maskImage: `url(${logo})`,
-  maskSize: 'contain',
-  maskPosition: 'center',
-  maskRepeat: 'no-repeat',
-  marginBottom: 20,
-  fill: 'black',
-})
-
 const Title = styled.h1({
   color: 'black',
   fontWeight: 900,
@@ -88,7 +62,6 @@ export const ContactSection = ({ name }) => {
     <Element name={name}>
       <Section>
         <Header>ДОВЕРЬСЯ нам!</Header>
-        {/* <Logo /> */}
         <Title>
           MACARONI
           <br />

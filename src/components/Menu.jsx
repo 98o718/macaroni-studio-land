@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 
 import { Link } from 'react-scroll'
 
-import MenuIcon from '../assets/icon.svg'
+import MenuIcon from '../assets/menu.svg'
 
 const BurgerButton = styled.button(
   {

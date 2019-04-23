@@ -3,24 +3,6 @@ import React, { useState } from 'react'
 import { keyframes } from '@emotion/core'
 import styled from '@emotion/styled'
 
-const Button = styled.button({
-  border: 'none',
-  background: 'linear-gradient(to bottom, #CB5D60, #E96466)',
-  padding: '30px 50px',
-  cursor: 'pointer',
-  outline: 'none',
-  transition: 'all .2s ease',
-  borderRadius: 5,
-  boxShadow: '0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)',
-  color: 'white',
-  fontWeight: 900,
-  fontSize: '2em',
-
-  ':hover': {
-    transform: 'scale(1.05)',
-  },
-})
-
 const reveal = keyframes`
 0% {
     opacity: 0;
@@ -65,13 +47,11 @@ const StylishButton = styled.button({
     width: '240px',
     height: '82px',
     zIndex: -1,
-    backgroundColor: '#FFD867',
     backgroundColor: '#E5CA97',
   },
 
   ':hover': {
     ':after': {
-      //   backgroundColor: 'white',
       top: 0,
       left: 0,
     },
@@ -94,7 +74,6 @@ export const ContactUs = () => {
       <StylishButton onClick={() => handleContact(!open)}>
         СВЯЗАТЬСЯ С НАМИ
       </StylishButton>
-      {/* <Button onClick={() => handleContact(!open)}>Написать нам</Button> */}
       {open && <ContactScreen onClick={() => handleContact(!open)} />}
     </>
   )

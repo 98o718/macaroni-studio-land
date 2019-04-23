@@ -2,8 +2,6 @@ import React from 'react'
 
 import styled from '@emotion/styled'
 
-import logo from '../assets/logo.svg'
-
 import { KnowMore } from './KnowMore'
 
 const Container = styled.div({
@@ -15,14 +13,6 @@ const Container = styled.div({
   justifyContent: 'space-between',
   padding: 30,
   zIndex: 1,
-})
-
-const Logo = styled.div({
-  height: '30%',
-  width: 'auto',
-  background: `url(${logo})`,
-  backgroundSize: 'contain',
-  backgroundRepeat: 'no-repeat',
 })
 
 const Title = styled.h1({
@@ -46,7 +36,6 @@ const Slogan = styled.h1({
 export const Welcome = () => {
   return (
     <Container>
-      {/* <Logo /> */}
       <Title>
         MACARONI
         <br />

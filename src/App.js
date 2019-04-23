@@ -1,7 +1,8 @@
 import React from 'react'
-import { FirstSection, SecondSection } from './sections'
+
+import { WelcomeSection, AboutSection, ContactSection } from './sections'
+
 import { Menu } from './components'
-import { Element } from 'react-scroll'
 
 const App = () => {
   return (
@@ -10,20 +11,21 @@ const App = () => {
         items={[
           {
             title: 'ГЛАВНАЯ',
-            link: 'first',
+            link: 'welcome',
           },
           {
             title: 'О НАС',
-            link: 'second',
+            link: 'about',
+          },
+          {
+            title: 'СВЯЗАТЬСЯ С НАМИ',
+            link: 'contact',
           },
         ]}
       />
-      <Element name="first">
-        <FirstSection />
-      </Element>
-      <Element name="second">
-        <SecondSection />
-      </Element>
+      <WelcomeSection name="welcome" />
+      <AboutSection name="about" />
+      <ContactSection name="contact" />
     </>
   )
 }

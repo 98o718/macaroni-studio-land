@@ -1,4 +1,13 @@
-import { FirstSection } from './FirstSection'
-import { SecondSection } from './SecondSection'
+import { WelcomeSection } from './WelcomeSection'
+import { AboutSection } from './AboutSection'
+import { ThirdSection } from './ThirdSection'
+import { FourthSection } from './FourthSection'
+import { ContactSection } from './ContactSection'
 
-export { FirstSection, SecondSection }
+export {
+  WelcomeSection,
+  AboutSection,
+  ThirdSection,
+  FourthSection,
+  ContactSection,
+}

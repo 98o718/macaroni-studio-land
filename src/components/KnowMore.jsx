@@ -85,7 +85,9 @@ export const KnowMore = () => {
   return (
     <Container>
       <Link to="about" spy={true} smooth={true} duration={350}>
-        <Paragraph buttonType={buttonType}>Узнать больше</Paragraph>
+        <Paragraph buttonType={buttonType} aria-label="Узнать больше">
+          Узнать больше
+        </Paragraph>
       </Link>
     </Container>
   )

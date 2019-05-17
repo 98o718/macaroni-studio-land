@@ -85,6 +85,7 @@ export function ContactUs() {
 
   return (
     <StylishButton
+      aria-label="Связаться с нами"
       buttonType={buttonType}
       onClick={() => (window.location.href = 'mailto:hello@macaroni.studio')}
     >

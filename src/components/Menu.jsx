@@ -114,6 +114,7 @@ export const Menu = ({ items }) => {
         tabindex="1"
         opened={open}
         onClick={() => handleMenu(!open)}
+        aria-label="Меню"
       >
         <MenuLine />
         <MenuLine />

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
 import { Element } from 'react-scroll'
 
@@ -8,22 +8,22 @@ import secondSectionBackground from '../assets/secondSectionBackground.png'
 
 import { About } from '../components'
 
-const Section = styled.section({
-  width: '100%',
-  minHeight: '100vh',
-  background: `url(${secondSectionBackground})`,
-  display: 'flex',
-  flexDirection: 'column',
-  position: 'relative',
-  padding: 50,
-  alignItems: 'center',
-  justifyContent: 'center',
+const Section = styled.section`
+  width: 100%;
+  min-height: 100vh;
+  background: url(${secondSectionBackground});
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 50px;
+  align-items: center;
+  justify-content: center;
 
-  '@media (max-width: 667px)': {
-    padding: '50px 30px',
-    backgroundSize: 'contain',
-  },
-})
+  @media (max-width: 667px) {
+    padding: 50px 30px;
+    background-size: contain;
+  }
+`
 
 export const AboutSection = ({ name }) => {
   return (

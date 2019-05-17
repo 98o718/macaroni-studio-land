@@ -1,12 +1,15 @@
 import React from 'react'
 
+import 'normalize.css'
+
 import { WelcomeSection, AboutSection, ContactSection } from './sections'
 
-import { Menu } from './components'
+import { Menu, GlobalStyle } from './components'
 
 const App = () => {
   return (
     <>
+      <GlobalStyle />
       <Menu
         items={[
           {

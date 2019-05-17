@@ -1,76 +1,71 @@
 import React from 'react'
 
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
-const Wrapper = styled.div({
-  width: '70%',
+const Wrapper = styled.div`
+  width: 70%;
 
-  '@media (max-width: 667px)': {
-    width: '100%',
-    fontSize: '0.8em',
-  },
-})
+  @media (max-width: 667px) {
+    width: 100%;
+    font-size: 0.8em;
+  }
+`
 
-const Header = styled.h1({
-  color: 'white',
-  fontSize: '2em',
-  margin: '15px 0',
-  marginTop: 25,
-  fontWeight: 900,
-  width: '100%',
-})
+const Header = styled.h1`
+  color: white;
+  font-size: 2em;
+  margin: 25px 15px 0 0;
+  font-weight: 900;
+  width: 100%;
+`
 
-const Phrase = styled.h2({
-  color: 'white',
-  fontSize: '1.5em',
-  margin: 0,
-  marginBottom: 5,
-})
+const Phrase = styled.h2`
+  color: white;
+  font-size: 1.5em;
+  margin: 0;
+  margin-bottom: 5px;
+`
 
-const Paragraph = styled.p({
-  color: 'white',
-  fontSize: '1.5em',
-  margin: 0,
-  fontWeight: 300,
-  marginBottom: 5,
-  '@media (max-width: 667px)': {
-    fontSize: '1.2em',
-  },
-})
+const Paragraph = styled.p`
+  color: white;
+  font-size: 1.5em;
+  margin: 0;
+  font-weight: 300;
+  margin-bottom: 5;
+
+  @media (max-width: 667px) {
+    font-size: 1.2em;
+  }
+`
 
 export const About = () => {
   return (
     <Wrapper>
-      {' '}
       <Header>
         КТО МЫ?{' '}
-        <span role="img" aria-label="Спагетти">
-          🍝
+        <span role="img" aria-label="Эмодзи ботаника">
+          🤓
         </span>
       </Header>
-      <Phrase>Мы - студия экспресс веб-разработки</Phrase>
-      <Header>
-        ПОЧЕМУ МЫ?{' '}
-        <span role="img" aria-label="Хмм">
-          🤔
-        </span>
-      </Header>
-      <Phrase>Наша цель помочь людям делать их продукты лучше!</Phrase>
+      <Phrase>
+        Мы - студия экспресс веб-разработки, и наша цель - помочь людям делать
+        их продукты лучше!
+      </Phrase>
       <Paragraph>
-        С новейшими технологиями и лучшими практиками сделаем ваш продукт лучше
+        С новейшими технологиями и лучшими практиками сделаем Ваш продукт лучше
         быстро и <b style={{ fontWeight: 500 }}>недорого</b>!
       </Paragraph>
-      <Header>
+      {/* <Header>
         ЧТО ЗНАЧИТ ЭКСПРЕСС?{' '}
         <span role="img" aria-label="Хмм">
           ⚡️
         </span>
       </Header>
-      <Phrase>Это значит, что мы разработаем вам сайт БЫСТРО!</Phrase>
+      <Phrase>Это значит, что мы разработаем вам сайт БЫСТРО!</Phrase> */}
       <Header>
         КАКИМ ОБРАЗОМ?{' '}
-        <span role="img" aria-label="Хмм">
-          🙅‍♂️
+        <span role="img" aria-label="Хмм эмодзи">
+          🤔
         </span>
       </Header>
       <Phrase>

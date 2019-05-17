@@ -1,90 +1,94 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
-import { keyframes } from '@emotion/core'
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
-const reveal = keyframes`
-0% {
-    opacity: 0;
+const StylishButton = styled.button`
+  margin: 0;
+  padding: 30px;
+  border: 3px solid black;
+  cursor: pointer;
+  background-color: transparent;
+  color: black;
+  font-weight: 700;
+  position: relative;
+  outline: none;
+  text-transform: uppercase;
+  width: 300px;
+  height: 80px;
+
+  &:focus {
+    border: ${({ buttonType }) =>
+      buttonType === 'keyboard' ? '3px solid white' : '3px solid black'};
   }
-  100% {
-    opacity: 1;
+
+  &:after {
+    transition: all 0.2s ease;
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: 297px;
+    height: 77px;
+    background-color: #e5ca97;
+    z-index: -1;
+  }
+
+  &:hover {
+    &:after {
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &:active {
+    border: 3px solid black;
+    &:after {
+      top: 0;
+      left: 0;
+      background-color: white;
+    }
+  }
+
+  @media (max-width: 375px) {
+    padding: 5px;
+    font-size: 0.7em;
+    width: 80%;
+    height: 72px;
+
+    &:after {
+      width: 102%;
+      height: 70px;
+    }
   }
 `
 
-const ContactScreen = styled.div({
-  position: 'fixed',
-  top: 0,
-  left: 0,
-  zIndex: 9999,
-  width: '100%',
-  height: '100%',
-  background: 'rgba(00, 00, 00, 0.8)',
-  animation: `${reveal} .2s linear`,
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-})
+export function ContactUs() {
+  const [buttonType, handleButtonType] = useState('keyboard')
 
-const StylishButton = styled.button({
-  margin: 30,
-  padding: '30px',
-  border: '3px solid black',
-  cursor: 'pointer',
-  backgroundColor: 'transparent',
-  color: 'black',
-  fontWeight: '700',
-  position: 'relative',
-  outline: 'none',
+  const handleKeyboard = () => {
+    handleButtonType('keyboard')
+  }
 
-  ':after': {
-    transition: 'all .2s ease',
-    content: '""',
-    position: 'absolute',
-    top: 7,
-    left: 7,
-    width: '240px',
-    height: '82px',
-    zIndex: -1,
-    backgroundColor: '#E5CA97',
-  },
+  const handleMouse = () => {
+    handleButtonType('mouse')
+  }
 
-  ':hover': {
-    ':after': {
-      top: 0,
-      left: 0,
-    },
-  },
+  useEffect(() => {
+    document.body.addEventListener('mousedown', handleMouse)
+    document.body.addEventListener('keydown', handleKeyboard)
 
-  ':active': {
-    ':after': {
-      top: 0,
-      left: 0,
-      backgroundColor: 'white',
-    },
-  },
-
-  '@media (max-width: 375px)': {
-    width: '200px',
-    height: '102px',
-
-    ':after': {
-      width: '200px',
-      height: '102px',
-    },
-  },
-})
-
-export const ContactUs = () => {
-  const [open, handleContact] = useState(false)
+    return () => {
+      document.body.removeEventListener('mousedown', handleMouse)
+      document.body.removeEventListener('keydown', handleKeyboard)
+    }
+  }, [])
 
   return (
-    <>
-      <StylishButton onClick={() => handleContact(!open)}>
-        СВЯЗАТЬСЯ С НАМИ
-      </StylishButton>
-      {open && <ContactScreen onClick={() => handleContact(!open)} />}
-    </>
+    <StylishButton
+      buttonType={buttonType}
+      onClick={() => (window.location.href = 'mailto:hello@macaroni.studio')}
+    >
+      hello@macaroni.studio
+    </StylishButton>
   )
 }
